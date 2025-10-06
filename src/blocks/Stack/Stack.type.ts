@@ -1,0 +1,4 @@
+export enum CurrentStackENUM {
+  MAIN_STACK = "MAIN_STACK",
+  FAMILIAR_STACK = "FAMILIAR_STACK"
+}
