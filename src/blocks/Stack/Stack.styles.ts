@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import SpotlightCard from "../../components/SpotlightCard/SpotlightCard";
 
 const StyledStack = styled.div`
   width: 100%;

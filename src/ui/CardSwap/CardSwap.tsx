@@ -13,6 +13,8 @@ import React, {
 import gsap from 'gsap';
 import './CardSwap.css';
 
+type CardRef = RefObject<HTMLDivElement | null>;
+
 export interface CardSwapProps {
   width?: number | string;
   height?: number | string;
@@ -38,7 +40,6 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(({ customClass, ...res
 ));
 Card.displayName = 'Card';
 
-type CardRef = RefObject<HTMLDivElement>;
 interface Slot {
   x: number;
   y: number;

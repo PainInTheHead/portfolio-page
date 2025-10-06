@@ -2,9 +2,7 @@ import type { CSSProperties, FC } from "react";
 import StarBorder from "../../ui/StarBorder/StarBorder";
 import { basicContacts, contactsAll } from "./Contacts.constants";
 import StyledContacts from "./Contacts.styles";
-import GradientText from "../../ui/GradientText/GradientText";
 import RotatingText from "../../ui/RotatingText/RotatingText";
-import { div } from "motion/react-client";
 
 type PropsType = {
   title?: string;

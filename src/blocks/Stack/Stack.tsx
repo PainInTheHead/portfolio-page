@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import SpotlightCard from "../../components/SpotlightCard/SpotlightCard";
+
 import StackItem from "../../components/StackItem/StackItem";
 import GradientText from "../../ui/GradientText/GradientText";
 import { allStacks } from "./Stack.constants";
@@ -11,7 +11,6 @@ const Stack: FC<{ stack: CurrentStackENUM }> = ({ stack }) => {
 
   return (
     <StyledStack>
-      {/* <SpotlightCard className="custom-spotlight-card stack-card"> */}
       <GradientText>
         <h1 className="stack__title">
           {currentStack.title}
@@ -26,7 +25,6 @@ const Stack: FC<{ stack: CurrentStackENUM }> = ({ stack }) => {
           />
               ))}
       </div>
-      {/* </SpotlightCard> */}
     </StyledStack>
    );
 }

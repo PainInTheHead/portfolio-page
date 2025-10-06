@@ -1,12 +1,7 @@
 import { colors } from "../../styles/theme/theme.constants";
-import Aurora from "../../ui/backgrounds/Aurora";
 import ElectricBorder from "../../ui/ElectricBorder/ElectricBorder";
-import GradualBlurMemo from "../../ui/GradualBlur/GradualBlur";
-
-import SplashCursor from "../../ui/SplashCursor/SplashCursor";
 import TextType from "../../ui/TextType/TextType";
 import TrueFocus from "../../ui/TrueFocus/TrueFocus";
-import Contacts from "../Contacts/Contacts";
 import { arrayWelcomeText } from "./MyCard.constants";
 import StyledMyCard from "./MyCard.styled";
 
