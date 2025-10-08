@@ -6,7 +6,7 @@ import AnimatedContent from "../../ui/AnimatedContent/AnimatedContent";
 const About = () => {
   return (
     <AnimatedContent>
-      <StyledAbout>
+      <StyledAbout className="max-width">
         <div className="about__content">
           <GradientText>
             <h1>

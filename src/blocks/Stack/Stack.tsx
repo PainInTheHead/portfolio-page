@@ -1,16 +1,16 @@
 import type { FC } from "react";
 
-import StackItem from "../../components/StackItem/StackItem";
 import GradientText from "../../ui/GradientText/GradientText";
 import { allStacks } from "./Stack.constants";
 import StyledStack from "./Stack.styles";
 import type { CurrentStackENUM } from "./Stack.type";
+import StackItem from "../../components/StackItem/StackItem";
 
 const Stack: FC<{ stack: CurrentStackENUM }> = ({ stack }) => {
   const currentStack = allStacks[stack];
 
   return (
-    <StyledStack>
+    <StyledStack className="max-width">
       <GradientText>
         <h1 className="stack__title">
           {currentStack.title}

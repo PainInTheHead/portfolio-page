@@ -7,9 +7,7 @@ import StyledMyCard from "./MyCard.styled";
 
 const MyCard = () => {
   return (
-    <StyledMyCard>
-      {/* <SplashCursor /> */}
-
+    <StyledMyCard className="max-width">
       <div className="my-card__name-container">
         <h2 className="my-card__name-text">
           IL'YA BRAGIN
@@ -23,9 +21,6 @@ const MyCard = () => {
           borderColor={colors.primary}
           sentence="Creative Frontend-Developer"
         />
-
-        {/* <p className="my-card__profession">Creative Frontend Developer</p> */}
-
       </div>
 
       <ElectricBorder
@@ -45,22 +40,6 @@ const MyCard = () => {
       </ElectricBorder>
 
       <div className="my-card__github-container">
-        {/* <p className="my-card__github">
-          GitHub: <a href="https://github.com/PainInTheHead"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GradientText
-              animationSpeed={3}
-              showBorder={false}
-              colors={gradientColors}
-              className="my-card__github-link"
-            >
-              PainInTheHead
-            </GradientText>
-          </a>
-        </p> */}
-
         <TextType
           typingSpeed={30}
           showCursor={true}
@@ -69,7 +48,6 @@ const MyCard = () => {
           text={arrayWelcomeText}
         />
       </div>
-
     </StyledMyCard>
    );
 }

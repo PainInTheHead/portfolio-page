@@ -148,7 +148,13 @@ export const GlobalStyles = createGlobalStyle`
   border-radius: 12px;
 }
 
+.max-width {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
 .app-content {
+
   height: 100%;
   overflow-y: auto;
   padding-bottom: 6rem;
@@ -160,5 +166,12 @@ export const GlobalStyles = createGlobalStyle`
 
 .app-content::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 `;

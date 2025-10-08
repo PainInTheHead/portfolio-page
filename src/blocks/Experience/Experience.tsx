@@ -8,7 +8,7 @@ import StyledExperience from "./Experience.styles";
 const Experience = () => {
   return (
     <AnimatedContent reverse>
-      <StyledExperience>
+      <StyledExperience className="max-width">
         <GradientText>
           <h1 className="experience__title">
             Experience

@@ -15,7 +15,7 @@ const Contacts: FC<PropsType> = ({ title, isAll, style, className }) => {
   return (
     <StyledContacts
       style={style}
-      className={className}
+      className={`${className} max-width`}
     >
       {title && (
         <div className="contacts__title">

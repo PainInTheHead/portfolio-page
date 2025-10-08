@@ -5,7 +5,7 @@ import StyledWantTo from "./WantTo.styles";
 
 const WantTo = () => {
   return (
-    <StyledWantTo>
+    <StyledWantTo className="max-width">
       <GradientText className="want-to__title">
         <h1>
           Want to

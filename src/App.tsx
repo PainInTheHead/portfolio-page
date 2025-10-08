@@ -1,22 +1,23 @@
-import About from './blocks/About/About';
-import MyCard from './blocks/MyCard/MyCard';
-import Experience from './blocks/Experience/Experience';
+import React, { Suspense } from 'react';
 import { GlobalStyles } from './styles/GlobalStyles';
 import { aurora2 } from './styles/theme/theme.constants';
 import Aurora from './ui/backgrounds/Aurora';
 import GradualBlurMemo from './ui/GradualBlur/GradualBlur';
-import Stack from './blocks/Stack/Stack';
 import { CurrentStackENUM } from './blocks/Stack/Stack.type';
-import MainProject from './blocks/MainProject/MainProject';
-import WantTo from './blocks/WantTo/WantTo';
-import Contacts from './blocks/Contacts/Contacts';
 import AnimatedContent from './ui/AnimatedContent/AnimatedContent';
+import CircularText from './components/CircularText/CircularText';
+
+const About = React.lazy(() => import('./blocks/About/About'));
+const Stack = React.lazy(() => import('./blocks/Stack/Stack'));
+const WantTo = React.lazy(() => import('./blocks/WantTo/WantTo'));
+const MyCard = React.lazy(() => import('./blocks/MyCard/MyCard'));
+const Contacts = React.lazy(() => import('./blocks/Contacts/Contacts'));
+const Experience = React.lazy(() => import('./blocks/Experience/Experience'));
+const MainProject = React.lazy(() => import('./blocks/MainProject/MainProject'));
 
 function App() {
   return (
     <>
-      {/* <MainLogoLoop /> */}
-
       <GlobalStyles />
 
       <section style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
@@ -28,35 +29,45 @@ function App() {
             colorStops={aurora2}
           />
 
-          <MyCard />
+          <Suspense fallback={
+            <div className='loader'>
+              <CircularText
+                onHover="speedUp"
+                spinDuration={20}
+                text="LOADING*MY*PORTFOLIO*"
+              />
+            </div>}
+          >
+            <MyCard />
 
-          <About />
+            <About />
 
-          <Experience/>
+            <Experience/>
 
-          <AnimatedContent>
-            <Stack stack={CurrentStackENUM.MAIN_STACK} />
-          </AnimatedContent>
+            <AnimatedContent>
+              <Stack stack={CurrentStackENUM.MAIN_STACK} />
+            </AnimatedContent>
 
-          <AnimatedContent reverse>
-            <Stack stack={CurrentStackENUM.FAMILIAR_STACK} />
-          </AnimatedContent>
+            <AnimatedContent reverse>
+              <Stack stack={CurrentStackENUM.FAMILIAR_STACK} />
+            </AnimatedContent>
 
-          <AnimatedContent triggerOffset={500}>
-            <MainProject />
-          </AnimatedContent>
+            <AnimatedContent triggerOffset={500}>
+              <MainProject />
+            </AnimatedContent>
 
-          <AnimatedContent reverse>
-            <WantTo />
-          </AnimatedContent>
+            <AnimatedContent reverse>
+              <WantTo />
+            </AnimatedContent>
 
-          <AnimatedContent>
-            <Contacts
-              isAll
-              title='Contacts'
-              style={{ marginTop: 90 }}
-            />
-          </AnimatedContent>
+            <AnimatedContent>
+              <Contacts
+                isAll
+                title='Contacts'
+                style={{ marginTop: 90 }}
+              />
+            </AnimatedContent>
+          </Suspense>
         </div>
 
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0 }}>
