@@ -22,7 +22,7 @@ export default [
     },
   },
   {
-    files: ['**/*.{ts,tsx}'],
+    files: ['**/*.{js,jsx,ts,tsx}'],
     languageOptions: {
       parser: tsParser,
       parserOptions: {
@@ -37,10 +37,14 @@ export default [
     },
     plugins: {
       '@typescript-eslint': tsPlugin,
+       styledComponents: require('eslint-plugin-styled-components'),
     },
     rules: {
       ...tsPlugin.configs.recommended.rules,
       '@typescript-eslint/no-unused-vars': ['warn'],
+      'styled-components/syntax': 'error', // проверка синтаксиса CSS в styled-components
+    'styled-components/no-vanilla': 'warn', // запрещает обычные styled без компонента
+    'styled-components/jsx-uses-vars': 'error', // чтобы eslint не жаловался на "unused"
       // НЕ добавляйте @typescript-eslint/indent — он deprecated
     },
   },

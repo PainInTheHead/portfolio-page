@@ -1,7 +1,7 @@
-import { colors } from "../../styles/theme/theme.constants";
-import ElectricBorder from "../../ui/ElectricBorder/ElectricBorder";
+// import { colors } from "../../styles/theme/theme.constants";
+// import ElectricBorder from "../../ui/ElectricBorder/ElectricBorder";
 import TextType from "../../ui/TextType/TextType";
-import TrueFocus from "../../ui/TrueFocus/TrueFocus";
+// import TrueFocus from "../../ui/TrueFocus/TrueFocus";
 import { arrayWelcomeText } from "./MyCard.constants";
 import StyledMyCard from "./MyCard.styled";
 
@@ -13,23 +13,23 @@ const MyCard = () => {
           IL'YA BRAGIN
         </h2>
 
-        <TrueFocus
+        {/* <TrueFocus
           blurAmount={5}
           manualMode={false}
           animationDuration={1}
           pauseBetweenAnimations={1}
           borderColor={colors.primary}
           sentence="Creative Frontend-Developer"
-        />
+        /> */}
       </div>
 
-      <ElectricBorder
+      {/* <ElectricBorder
         color={colors.primary}
         speed={0.6}
         chaos={0.5}
         thickness={3}
         style={{ borderRadius: 16 }}
-      >
+      > */}
         <div className="my-card__avatar-container">
           <img
             alt="avatar"
@@ -37,7 +37,7 @@ const MyCard = () => {
             className="my-card__avatar"
           />
         </div>
-      </ElectricBorder>
+      {/* </ElectricBorder> */}
 
       <div className="my-card__github-container">
         <TextType

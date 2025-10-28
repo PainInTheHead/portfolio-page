@@ -158,8 +158,8 @@ export const GlobalStyles = createGlobalStyle`
   height: 100%;
   overflow-y: auto;
   padding-bottom: 6rem;
+  overflow-x: hidden;
 
-  /* Скрыть скроллбар для всех браузеров */
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE и Edge */
 }

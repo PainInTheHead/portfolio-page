@@ -32,6 +32,8 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
   direction = 'horizontal',
   onComplete
 }) => {
+  const isMobileWidth = window.innerWidth < 600;
+  const distanceAdaptive = isMobileWidth ? 100 : distance;
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -39,7 +41,7 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
     if (!el) return;
 
     const axis = direction === 'horizontal' ? 'x' : 'y';
-    const offset = reverse ? -distance : distance;
+    const offset = reverse ? -distanceAdaptive : distanceAdaptive;
 
     gsap.set(el, {
       [axis]: offset,
@@ -77,7 +79,7 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
       gsap.killTweensOf(el);
     };
   }, [
-    distance, direction, reverse, duration, ease,
+    distanceAdaptive, direction, reverse, duration, ease,
     initialOpacity, animateOpacity, scale, threshold, triggerOffset, delay, onComplete
   ]);
 

@@ -25,13 +25,14 @@ const StyledContacts = styled.div`
     padding: 4px 12px;
 
     border-radius: 18px;
-    background: ${({ theme }) => theme.colors.backgroundViolet};
+    background: #8450f0;
 
     overflow: hidden;
   }
 
   .contacts__content {
     display: flex;
+    flex-wrap: wrap; 
     flex-direction: row;
     justify-content: center;
     
@@ -58,6 +59,19 @@ const StyledContacts = styled.div`
     font-size: 24px;
     font-weight: 700;
   }
+
+  @media (max-width: 650) {
+  .contacts__content > * {
+    flex: 0 0 calc(50% - 16px); /* 50% ширины минус половина gap */
+  }
+
+}
+
+@media (max-width: 420px) {
+  .contacts__title {
+    flex-direction: column;
+  }
+}
 `;
 
 export default StyledContacts;
