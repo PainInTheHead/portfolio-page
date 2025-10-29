@@ -6,6 +6,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
+import jsonc from 'eslint-plugin-jsonc';
 
 export default [
   {
@@ -37,15 +38,10 @@ export default [
     },
     plugins: {
       '@typescript-eslint': tsPlugin,
-       styledComponents: require('eslint-plugin-styled-components'),
     },
     rules: {
       ...tsPlugin.configs.recommended.rules,
       '@typescript-eslint/no-unused-vars': ['warn'],
-      'styled-components/syntax': 'error', // проверка синтаксиса CSS в styled-components
-    'styled-components/no-vanilla': 'warn', // запрещает обычные styled без компонента
-    'styled-components/jsx-uses-vars': 'error', // чтобы eslint не жаловался на "unused"
-      // НЕ добавляйте @typescript-eslint/indent — он deprecated
     },
   },
   {
@@ -61,15 +57,15 @@ export default [
       'react-refresh': reactRefresh,
     },
     rules: {
-      // Настройки React
-      'react/react-in-jsx-scope': 'off', // для React 17+
+      // React
+      'react/react-in-jsx-scope': 'off',
       'react/jsx-indent': ['error', 2],
       'react/jsx-indent-props': ['error', 2],
       'react/jsx-max-props-per-line': ['error', { maximum: 1 }],
       'react/jsx-curly-spacing': ['error', { when: 'never', children: true }],
       'react/jsx-closing-bracket-location': ['error', 'line-aligned'],
 
-      // Общие правила
+      // Общие
       'no-trailing-spaces': 'error',
       'space-before-blocks': 'error',
       'space-before-function-paren': ['error', 'never'],
@@ -80,7 +76,7 @@ export default [
       'comma-spacing': ['error', { before: false, after: true }],
       'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0 }],
 
-      // React Hooks
+      // Hooks
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
     },

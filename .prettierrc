@@ -9,5 +9,16 @@
   "plugins": [
     "prettier-plugin-tailwindcss",
     "prettier-plugin-tailwind-styled-components"
+  ],
+  "overrides": [
+    {
+      "files": "*.json",
+      "options": {
+        "tabWidth": 2,
+        "trailingComma": "none",
+        "printWidth": 80,
+        "singleQuote": false
+      }
+    }
   ]
 }
