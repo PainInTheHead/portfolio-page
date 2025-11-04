@@ -13,6 +13,13 @@ const StyledMyCard = styled.div`
 
   gap: 6vh;
 
+  .pixelated-image-card {
+    border: none;
+    border-radius: 50%;
+    overflow: hidden;
+    background: none;
+  }
+
   .my-card__name-container {
     display: flex;
 

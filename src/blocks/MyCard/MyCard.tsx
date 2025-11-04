@@ -5,6 +5,7 @@ import TextType from "../../ui/TextType/TextType";
 import TrueFocus from "../../ui/TrueFocus/TrueFocus";
 import StyledMyCard from "./MyCard.styled";
 import useMyCard from "./useMyCard";
+import PixelTransition from "../../ui/PixelTransition/PixelTransition";
 
 const MyCard = () => {
   const { cardTextContent } = useMyCard();
@@ -19,10 +20,23 @@ const MyCard = () => {
 
   const avatarContent = useMemo(() => (
     <div className="my-card__avatar-container">
-      <img
-        alt="avatar"
-        src="/avatar.jpg"
-        className="my-card__avatar"
+      <PixelTransition
+        gridSize={20}
+        animationStepDuration={0.5}
+        firstContent={
+          <img
+            alt="avatar"
+            src="/avatar.jpg"
+            className="my-card__avatar"
+          />
+        }
+        secondContent={
+          <img
+            alt="avatar"
+            src="/monkey.jpg"
+            className="my-card__avatar"
+          />
+        }
       />
     </div>
   ), []);
