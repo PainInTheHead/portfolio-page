@@ -69,6 +69,8 @@ const StyledMyCard = styled.div`
     font-size: 24px;
     font-weight: 700;
     text-align: center;
+
+    min-height: 210px;
   }
 
   .my-card__github-link {
