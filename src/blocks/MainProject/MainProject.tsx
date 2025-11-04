@@ -1,6 +1,5 @@
 import CardSwap, { Card } from "../../ui/CardSwap/CardSwap";
 import GradientText from "../../ui/GradientText/GradientText";
-import { projectCards } from "./MainProject.constants";
 import StyledMainProject from "./MainProject.styles";
 import useMainProject from "./useMainProject";
 
