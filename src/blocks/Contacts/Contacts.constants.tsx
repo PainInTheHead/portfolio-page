@@ -2,7 +2,7 @@ import { SiLinkedin, SiGithub, SiGmail, SiTelegram  } from 'react-icons/si';
 import {  FaFilePdf } from "react-icons/fa";
 
 export const basicContacts = [
-  { Icon: FaFilePdf, title: "CV", href: "public/cv.pdf" },
+  { Icon: FaFilePdf, title: "CV", href: "/cv.pdf" },
   { Icon: SiGithub, title: "GitHub", href: "https://github.com/PainInTheHead" },
   { Icon: SiTelegram, title: "Telegram", href: "https://t.me/hudik1234" },
 ]
