@@ -83,6 +83,8 @@ const StyledMainProject = styled.div`
   @media (max-width: 650px) {
 align-items: start;
 
+min-height: 550px;
+
 .card-swap-container {
   width: 300% !important;
   transform: scale(0.7) translate(25%, 25%);
@@ -104,6 +106,7 @@ align-items: start;
   }
 
   @media (max-width: 420px) {
+    min-height: 610px;
     .card-swap-container {
       width: 260% !important;
       
