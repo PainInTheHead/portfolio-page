@@ -6,7 +6,6 @@ import TrueFocus from "../../ui/TrueFocus/TrueFocus";
 import StyledMyCard from "./MyCard.styled";
 import useMyCard from "./useMyCard";
 import PixelTransition from "../../ui/PixelTransition/PixelTransition";
-import StarBorder from "../../ui/StarBorder/StarBorder";
 
 const MyCard = () => {
   const { cardTextContent } = useMyCard();
