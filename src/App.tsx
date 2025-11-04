@@ -14,6 +14,7 @@ const MyCard = React.lazy(() => import('./blocks/MyCard/MyCard'));
 const Contacts = React.lazy(() => import('./blocks/Contacts/Contacts'));
 const Experience = React.lazy(() => import('./blocks/Experience/Experience'));
 const MainProject = React.lazy(() => import('./blocks/MainProject/MainProject'));
+const LangSwitcher = React.lazy(() => import('./blocks/LangSwitcher/LangSwitcher'));
 
 function App() {
   return (
@@ -24,8 +25,8 @@ function App() {
         <div className='app-content'>
           <Aurora
             blend={0.4}
-            speed={1.5}
-            amplitude={1.0}
+            speed={1.7}
+            amplitude={0.5}
             colorStops={aurora2}
           />
 
@@ -38,6 +39,8 @@ function App() {
               />
             </div>}
           >
+            <LangSwitcher />
+
             <MyCard />
 
             <About />

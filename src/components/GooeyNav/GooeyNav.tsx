@@ -111,7 +111,18 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>, index: number) => {
     const liEl = e.currentTarget;
-    if (activeIndex === index) return;
+    if (activeIndex === index) {
+  const nextIndex = (index + 1) % items.length;
+  setActiveIndex(nextIndex);
+  updateEffectPosition(
+    navRef.current?.querySelectorAll('li')[nextIndex] as HTMLElement
+  );
+
+  if (filterRef.current) {
+    makeParticles(filterRef.current);
+  }
+  return;
+}
 
     setActiveIndex(index);
     updateEffectPosition(liEl);

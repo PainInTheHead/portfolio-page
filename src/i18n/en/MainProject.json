@@ -1,0 +1,30 @@
+{
+  "description": "Main project in my portfolio. Worked in an international team on frontend, optimized chats and state management, refactored code for faster development, improved user experience, reworked modal logic, integrated Google Maps and Stripe.",
+  "cardContent": [
+  {
+    "title": "Optimized Chats",
+    "subtitle": "Improved performance & state management",
+    "image": "/chat.png"
+  },
+  {
+    "title": "Refactored Modals",
+    "subtitle": "Faster dev & better UX",
+    "image": "/sitter.png"
+  },
+  {
+    "title": "Google Maps Integration",
+    "subtitle": "Location features in UI",
+    "image": "/maps.png"
+  },
+  {
+    "title": "Stripe Payments",
+    "subtitle": "Secure payment integration",
+    "image": "/stripe.png"
+  },
+  {
+    "title": "Code Refactoring",
+    "subtitle": "Cleaned large sections for speed",
+    "image": "/profileSitter.png"
+  }
+]
+}

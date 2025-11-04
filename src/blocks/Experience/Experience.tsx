@@ -1,22 +1,22 @@
 import ExperienceItem from "../../components/ExperienceItem/ExperienceItem";
 import SpotlightCard from "../../components/SpotlightCard/SpotlightCard";
-// import AnimatedContent from "../../ui/AnimatedContent/AnimatedContent";
 import GradientText from "../../ui/GradientText/GradientText";
-import { experienceData } from "./Experience.constant";
 import StyledExperience from "./Experience.styles";
+import useExperience from "./useExperience";
 
 const Experience = () => {
+  const { textsAbout } = useExperience();
+
   return (
-    // <AnimatedContent reverse>
     <StyledExperience className="max-width">
       <GradientText>
         <h1 className="experience__title">
-          Experience
+          {textsAbout.title}
         </h1>
       </GradientText>
 
       <div className="experience__content">
-        {experienceData.map((item, index) => (
+        {textsAbout.cardsContent.map((item, index) => (
           <SpotlightCard key={index}
             className="custom-spotlight-card experience-card glass-effect"
           >
@@ -27,7 +27,6 @@ const Experience = () => {
           ))}
       </div>
     </StyledExperience>
-    // </AnimatedContent>
    );
 }
 

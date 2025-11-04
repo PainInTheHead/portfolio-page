@@ -1,13 +1,31 @@
+import { useState, useEffect, useMemo } from "react";
 import { colors } from "../../styles/theme/theme.constants";
 import ElectricBorder from "../../ui/ElectricBorder/ElectricBorder";
 import TextType from "../../ui/TextType/TextType";
 import TrueFocus from "../../ui/TrueFocus/TrueFocus";
-import LangSwitcher from "../LangSwitcher/LangSwitcher";
 import StyledMyCard from "./MyCard.styled";
 import useMyCard from "./useMyCard";
 
 const MyCard = () => {
   const { cardTextContent } = useMyCard();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const avatarContent = useMemo(() => (
+    <div className="my-card__avatar-container">
+      <img
+        alt="avatar"
+        src="/avatar.jpg"
+        className="my-card__avatar"
+      />
+    </div>
+  ), []);
 
   return (
     <StyledMyCard className="max-width">
@@ -26,23 +44,17 @@ const MyCard = () => {
         />
       </div>
 
-      <ElectricBorder
-        speed={0.6}
-        chaos={0.5}
-        thickness={3}
-        color={colors.primary}
-        style={{ borderRadius: 16 }}
-      >
-        <div className="my-card__avatar-container">
-          <img
-            alt="avatar"
-            src="/avatar.jpg"
-            className="my-card__avatar"
-          />
-        </div>
-      </ElectricBorder>
-
-      <LangSwitcher />
+      {isMobile ? avatarContent : (
+        <ElectricBorder
+          speed={0.6}
+          chaos={0.5}
+          thickness={3}
+          color={colors.primary}
+          style={{ borderRadius: 16 }}
+        >
+          {avatarContent}
+        </ElectricBorder>
+      )}
 
       <div className="my-card__github-container">
         <TextType
@@ -54,7 +66,7 @@ const MyCard = () => {
         />
       </div>
     </StyledMyCard>
-   );
+  );
 }
 
 export default MyCard;

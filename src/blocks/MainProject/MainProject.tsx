@@ -2,8 +2,11 @@ import CardSwap, { Card } from "../../ui/CardSwap/CardSwap";
 import GradientText from "../../ui/GradientText/GradientText";
 import { projectCards } from "./MainProject.constants";
 import StyledMainProject from "./MainProject.styles";
+import useMainProject from "./useMainProject";
 
 const MainProject = () => {
+  const { textsAbout } = useMainProject();
+
   return (
     <StyledMainProject>
       <div className="main-project__left-block">
@@ -14,9 +17,7 @@ const MainProject = () => {
         </GradientText>
 
         <p className="main-project__description">
-          Main project in my portfolio. Worked in an international team on frontend, optimized
-          chats and state management, refactored code for faster development, improved user
-          experience, reworked modal logic, integrated Google Maps and Stripe.
+          {textsAbout.description}
         </p>
       </div>
 
@@ -27,7 +28,7 @@ const MainProject = () => {
           pauseOnHover={false}
           verticalDistance={40}
         >
-          {projectCards.map((card, index) => (
+          {textsAbout.cardContent.map((card, index) => (
             <Card key={index}
               className="main-project__card"
             >

@@ -40,9 +40,9 @@
 .gooey-nav-container nav ul {
   display: flex;
   flex-direction: row;
-  gap: 2em;
+  gap: 2px;
   list-style: none;
-  padding: 0 1em;
+  padding: 0;
   margin: 0;
   position: relative;
   z-index: 3;
@@ -185,6 +185,13 @@
   background: var(--color);
   opacity: 1;
   animation: point calc(var(--time)) ease 1 -350ms;
+}
+
+.gooey-nav-container {
+  --color-1: #d1d5db; /* светлый серый */
+  --color-2: #a1a8b3; /* мягкий серо-голубой */
+  --color-3: #b0b7c3; /* приглушённый голубовато-серый */
+  --color-4: #759ceb; /* спокойный серый акцент */
 }
 
 @keyframes particle {

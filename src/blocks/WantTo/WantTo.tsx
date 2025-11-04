@@ -1,19 +1,21 @@
 import SpotlightCard from "../../components/SpotlightCard/SpotlightCard";
 import GradientText from "../../ui/GradientText/GradientText";
-import { wantToContent } from "./WantTo.constants";
+import useWantTo from "./useWantTo";
 import StyledWantTo from "./WantTo.styles";
 
 const WantTo = () => {
+  const { textsWantTo } = useWantTo();
+
   return (
     <StyledWantTo className="max-width">
       <GradientText className="want-to__title">
         <h1>
-          Want to
+          {textsWantTo.title}
         </h1>
       </GradientText>
 
       <div className="want-to__content">
-        {wantToContent.map((item, index) => (
+        {textsWantTo.cardContent.map((item, index) => (
           <SpotlightCard key={index}
             className="custom-spotlight-card experience-card glass-effect"
           >
